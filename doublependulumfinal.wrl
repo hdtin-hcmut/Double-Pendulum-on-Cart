@@ -1,0 +1,129 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+DEF Base Transform {
+	translation	0 -2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				ambientIntensity	0.2
+				diffuseColor	0.31 0.00187783 0.100369
+				shininess	0.2
+				transparency	0
+			}
+
+		}
+
+		geometry	Box {
+			size	10 0.1 1
+		}
+
+	}
+}
+Background {
+	groundAngle	[ 0.9, 1.5, 1.57 ]
+	groundColor	[ 0 0.8 0,
+			  0.174249 0.82 0.187362,
+			  0.467223 0.82 0.445801,
+			  0.621997 0.67 0.600279 ]
+	skyAngle	[ 0.1, 1.2, 1.57 ]
+	skyColor	[ 0.76238 0.8 0.1427,
+			  0.277798 0.219779 0.7,
+			  0.222549 0.390234 0.7,
+			  0.60094 0.662637 0.69 ]
+}
+DEF Cart Transform {
+	translation	0 -1.2 0
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    ambientIntensity	0.2
+				    diffuseColor	0.0120863 0.353262 0.8
+				    shininess	0.2
+				    transparency	0
+			    }
+
+		    }
+
+		    geometry	Box {
+			    size	2 1 1
+		    }
+
+	    }
+
+	    DEF joint1 Transform {
+		    translation	0 0.8 1.4
+		    children [ 
+			Shape {
+				appearance	Appearance {
+					material	Material {
+					}
+
+				}
+
+				geometry	Sphere {
+					radius	0.3
+				}
+
+			}
+
+			DEF Pendulum1 Transform {
+				translation	0 1 0
+				children Shape {
+					appearance	Appearance {
+						material	Material {
+						}
+
+					}
+
+					geometry	Cylinder {
+						height	2.5
+						radius	0.15
+					}
+
+				}
+			}
+
+			DEF Joint2 Transform {
+				translation	0 2.4 0
+				children [ 
+				    Shape {
+					    appearance	Appearance {
+						    material	Material {
+						    }
+
+					    }
+
+					    geometry	Sphere {
+						    radius	0.3
+					    }
+
+				    }
+
+				    DEF Pendulum2 Transform {
+					    translation	0 1.5 0
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	3
+							    radius	0.15
+						    }
+
+					    }
+				    }
+				]
+			}
+		    ]
+	    }
+	]
+}
